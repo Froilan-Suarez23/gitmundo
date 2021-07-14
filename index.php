@@ -39,6 +39,9 @@
                         <li class="nav-item">
                           <a class="nav-link" data-toggle="pill" href="#menu2">INFORMACIÓN</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link"  href="login.php">INICIAR SESION</a>
+                        </li>
                       </ul>
 
                       <!-- Tab panes -->
