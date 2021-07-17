@@ -1,8 +1,8 @@
 <?php
 session_start();
-$sesion = $_SESSION['username'];
+$usuario = $_SESSION['username'];
 
-if(!isset($sesion)){
+if(!isset($usuario)){
     header("location: login.php");
 
 }else{
@@ -23,26 +23,27 @@ if(!isset($sesion)){
 </head>
 <body>
 	<br>
-<div class="container">
- 
-   <ul class="nav justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link" href="#">.......</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">.......</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">.......</a>
-    </li>
-    <li class="nav-item ">
-    <?php
+	<div class="container">
 
-    echo "<a href='logica/salir.php'>Salir</a>";
-    ?>
-    </li>
-  </ul>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Acerca de:</button>
+    <button type="button" class="btn btn-primary"><a class="text-white" href="contacto.php">Contactos </a>  </button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <?php echo "$usuario"; ?>
+      </button>
+      <div class="dropdown-menu">
+    
+        <?php
+		    echo "<a class='dropdown-item' href='logica/salir.php'>Salir</a>";
+		?>
+        
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 
 <div class="container mt-3">
@@ -51,7 +52,7 @@ if(!isset($sesion)){
   <div class="media border p-3">
     <img src="imag/froilan.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
     <div class="media-body">
-      <h4><?php echo "$sesion"; ?></h4>
+      <h4><?php echo "$usuario"; ?></h4>
       <p>En la materia de web integral se realiza una aplicación de votos en línea para los alumnos de la universidad, en dicha aplicación el alumno con su matrícula podrá ejercer su voto en algunos aspectos propios de la universidad, tales como el proceso de elección de estudiantes.</p>      
     </div>
   </div>
